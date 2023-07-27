@@ -1,0 +1,5 @@
+export const TEST = 'test'
+export const TEST2 = 'test'
+export const TEST3 = 'test'
+export const TEST4 = 'test'
+export const TEST5 = 'test'

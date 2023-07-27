@@ -1,0 +1,39 @@
+{
+    "name": "chain-reaction",
+    "version": "1.0.0",
+    "description": "Sr. software engineer assignment - chain reaction",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "lint": "eslint .",
+        "format": "prettier --write .",
+        "start": "node ./index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/al6obasi/chain-reaction.git"
+    },
+    "keywords": [
+        "nodeJs",
+        "blog",
+        "posts"
+    ],
+    "author": "Mohammad Masaid",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/al6obasi/chain-reaction/issues"
+    },
+    "homepage": "https://github.com/al6obasi/chain-reaction#readme",
+    "dependencies": {
+        "bcrypt": "^5.1.0",
+        "eslint-plugin-import": "^2.27.5",
+        "joi": "^17.9.2",
+        "jsonwebtoken": "^9.0.1",
+        "sequelize": "^6.32.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.45.0",
+        "prettier": "^3.0.0"
+    }
+}
