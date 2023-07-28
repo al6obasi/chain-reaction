@@ -1,0 +1,11 @@
+const path = require('path');
+
+/**
+ * Configuration for Sequelize CLI.
+ * Customize the paths for configuration, migrations, and seeders.
+ */
+module.exports = {
+  config: path.resolve('src/database', 'config.js'),         // Path to the configuration file
+  'migrations-path': path.resolve('src/database', 'migrations'),   // Path to the migrations directory
+  'seeders-path': path.resolve('src/database', 'seeders'),         // Path to the seeders directory
+};

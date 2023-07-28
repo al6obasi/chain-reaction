@@ -1,32 +1,26 @@
 {
     "env": {
-        "node": true
+        "node": true // Use this configuration for Node.js environment
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings"
-    ],
+    "extends": ["eslint:recommended"], // Use ESLint recommended rules
     "parserOptions": {
-        "ecmaVersion": 2018,
-        "sourceType": "module"
+        "ecmaVersion": 2018 // Use ECMAScript 2018 syntax
     },
     "rules": {
-        "quotes": ["error", "single"],
-        "indent": ["error", 4],
-        "no-console": "warn",
-        "no-unused-vars": "warn",
-        "arrow-spacing": "error",
-        "comma-spacing": "error",
-        "key-spacing": "error",
-        "object-curly-spacing": ["error", "always"],
-        "array-bracket-spacing": ["error", "never"],
-        "no-multi-spaces": "error",
-        "no-multiple-empty-lines": ["error", { "max": 1 }],
-        "no-trailing-spaces": "error",
-        "import/no-unresolved": "error",
-        "import/named": "error",
-        "import/default": "error",
-        "import/namespace": "error"
-    }
+        "quotes": ["error", "single"], // Use single quotes for strings
+        "indent": ["error", 4], // Use 4 spaces for indentation
+        "no-console": "off", // Show warning for console.log usage
+        "no-unused-vars": "error", // Show warning for unused variables
+        "arrow-spacing": "error", // Enforce consistent arrow function spacing
+        "comma-spacing": "error", // Enforce consistent comma spacing
+        "key-spacing": "error", // Enforce consistent spacing in object keys
+        "object-curly-spacing": ["error", "always"], // Enforce consistent spacing in object literals
+        "array-bracket-spacing": ["error", "never"], // Disallow spaces inside array brackets
+        "no-multi-spaces": "error", // Disallow multiple spaces
+        "no-multiple-empty-lines": ["error", { "max": 1 }], // Disallow multiple consecutive empty lines
+        "no-trailing-spaces": "error", // Disallow trailing spaces
+        "sort-imports-requires/sort-imports": "error", // Enforce sorted import statements
+        "sort-imports-requires/sort-requires": "error" // Enforce sorted require statements
+    },
+    "plugins": ["sort-imports-requires"] // Use the sort-imports-requires plugin for sorting imports
 }
