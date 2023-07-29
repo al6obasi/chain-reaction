@@ -1,5 +1,7 @@
 'use strict'
 
+const { generatePosts } = require('../../helpers/utils')
+
 /**
  * @typedef {import('sequelize').QueryInterface} SequelizeQueryInterface
  */
@@ -16,24 +18,7 @@ module.exports = {
     async up({ context: queryInterface }) {
         await queryInterface.bulkInsert(
             'posts',
-            [
-                {
-                    id: 1,
-                    title: 'post1',
-                    content: 'post one content',
-                    user_id: 1,
-                    created_at: new Date(),
-                    updated_at: new Date(),
-                },
-                {
-                    id: 2,
-                    title: 'post2',
-                    content: 'post two content',
-                    user_id: 2,
-                    created_at: new Date(),
-                    updated_at: new Date(),
-                },
-            ],
+            generatePosts(),
             {},
         )
     },

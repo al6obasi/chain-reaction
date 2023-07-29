@@ -1,3 +1,5 @@
+const AuthService = require('../../services/AuthService')
+
 /**
  * Seed data for the users table.
  * @type {import('sequelize-cli').Migration}
@@ -15,17 +17,21 @@ module.exports = {
             [
                 {
                     email: 'test@test.com',
-                    id: 1,
                     username: 'test',
-                    password: '1234',
+                    password:
+                        await AuthService.hashPassword(
+                            '1234',
+                        ),
                     created_at: new Date(),
                     updated_at: new Date(),
                 },
                 {
                     email: 'test2@test.com',
-                    id: 2,
                     username: 'test2',
-                    password: '4321',
+                    password:
+                        await AuthService.hashPassword(
+                            '4321',
+                        ),
                     created_at: new Date(),
                     updated_at: new Date(),
                 },

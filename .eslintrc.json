@@ -4,7 +4,7 @@
     },
     "extends": ["eslint:recommended"], // Use ESLint recommended rules
     "parserOptions": {
-        "ecmaVersion": 2018 // Use ECMAScript 2018 syntax
+        "ecmaVersion": 2022
     },
     "rules": {
         "quotes": ["error", "single"], // Use single quotes for strings

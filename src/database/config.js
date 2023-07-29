@@ -23,7 +23,6 @@ module.exports = {
     },
     /**
      * Production environment configuration.
-     * Add specific production settings if needed.
      */
     production: {},
 }

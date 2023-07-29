@@ -11,7 +11,7 @@
         "migrate:undo": "npx sequelize-cli db:migrate:undo",
         "seed:all": "npx sequelize db:seed:all",
         "seed:undo:all": "npx sequelize db:seed:undo:all",
-        "start": "node src/index.js"
+        "start": "nodemon src/App.js"
     },
     "repository": {
         "type": "git",
@@ -31,14 +31,16 @@
     "dependencies": {
         "bcrypt": "^5.1.0",
         "dotenv": "^16.3.1",
+        "http": "^0.0.1-security",
         "joi": "^17.9.2",
         "jsonwebtoken": "^9.0.1",
+        "nodemon": "^3.0.1",
         "pg": "^8.11.1",
         "sequelize": "^6.32.1",
-        "umzug": "^3.2.1"
+        "umzug": "^3.2.1",
+        "url": "^0.11.1"
     },
     "devDependencies": {
-        "babel-register": "^6.26.0",
         "eslint": "^8.45.0",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-sort-imports-requires": "^1.0.2",
