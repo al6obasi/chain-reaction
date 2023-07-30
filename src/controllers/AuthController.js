@@ -38,9 +38,16 @@ class AuthController {
                 await parseRequestBody(req)
 
             if (!AuthService.isValidEmail(email)) {
-                // Throw 400 Bad Request Error if email is invalid
+                // Throw 400 Bad Request Error if the email is invalid
                 throw new BadRequestError(
-                    'Invalid Email Address',
+                    'Email is invalid',
+                )
+            }
+
+            if (!AuthService.isValidPassword(password)) {
+                // Throw 400 Bad Request Error if the password is invalid
+                throw new BadRequestError(
+                    'Password is invalid',
                 )
             }
 

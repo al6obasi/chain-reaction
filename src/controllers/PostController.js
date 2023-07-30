@@ -89,6 +89,33 @@ class PostController {
                 sortOrder = DEFAULT_SORT_ORDER,
             } = queryParams
 
+            // Validate the query params
+            if (isNaN(parseInt(page))) {
+                throw new BadRequestError(
+                    `Invalid query params page: ${page}. The allowed values are numbers.`,
+                )
+            }
+
+            if (isNaN(parseInt(limit))) {
+                throw new BadRequestError(
+                    `Invalid query params limit: ${limit}. The allowed values are numbers.`,
+                )
+            }
+
+            if (
+                !['id', 'title', 'content'].includes(sortBy)
+            ) {
+                throw new BadRequestError(
+                    `Invalid query params sortBy: ${sortBy}. The allowed values 'id', 'title' or 'content'.`,
+                )
+            }
+
+            if (!['asc', 'desc'].includes(sortOrder)) {
+                throw new BadRequestError(
+                    `Invalid query params sortOrder: ${sortOrder}. The allowed values 'asc' or 'desc'.`,
+                )
+            }
+
             // Get all posts with sorting and pagination
             const { count, rows: posts } =
                 await req.db.models.Post.findAndCountAll({

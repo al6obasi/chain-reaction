@@ -20,7 +20,7 @@ module.exports = {
                     username: 'test',
                     password:
                         await AuthService.hashPassword(
-                            '1234',
+                            'Test@2023',
                         ),
                     created_at: new Date(),
                     updated_at: new Date(),
@@ -30,7 +30,7 @@ module.exports = {
                     username: 'test2',
                     password:
                         await AuthService.hashPassword(
-                            '4321',
+                            'Test2@2023',
                         ),
                     created_at: new Date(),
                     updated_at: new Date(),

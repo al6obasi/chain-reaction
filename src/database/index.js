@@ -1,5 +1,8 @@
 const { DataTypes, Sequelize } = require('sequelize')
 const { SequelizeStorage, Umzug } = require('umzug')
+const {
+    InternalServerError,
+} = require('../helpers/Errors.js')
 const PostModel = require('./models/post.js')
 const UserModel = require('./models/user.js')
 
@@ -50,7 +53,9 @@ class Database {
                 logger: console,
             })
         } catch (error) {
-            throw new Error(error)
+            throw new InternalServerError(
+                'Unable to instance umzug instance',
+            )
         }
     }
 
@@ -85,6 +90,9 @@ class Database {
                 'Unable to connect to the database:',
                 error,
             )
+            throw new InternalServerError(
+                'Unable to connect to the database:',
+            )
         }
     }
 
@@ -102,6 +110,9 @@ class Database {
                 'Error running migrations:',
                 error,
             )
+            throw new InternalServerError(
+                'Error running migrations:',
+            )
         }
     }
 
@@ -116,6 +127,9 @@ class Database {
             )
         } catch (error) {
             console.error('Error running seeders:', error)
+            throw new InternalServerError(
+                'Error running seeders:',
+            )
         }
     }
 }

@@ -1,0 +1,215 @@
+{
+    "info": {
+        "_postman_id": "2e645578-2a46-4d3b-825b-1df4f0e35c64",
+        "name": "Blogging Platform RESTful API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "1633351",
+        "_collection_link": "https://www.postman.com/datazone/workspace/blogging-platform-restful-api/collection/1633351-2e645578-2a46-4d3b-825b-1df4f0e35c64?action=share&creator=1633351&source=collection_link"
+    },
+    "item": [
+        {
+            "name": "register",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"email\":\"test3@test.com\",\r\n    \"password\": \"Test3@test\",\r\n    \"username\":\"test3\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "localhost:3000/register",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["register"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "login",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"email\":\"test3@test.com\",\r\n    \"password\": \"Test3@test\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "localhost:3000/login",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["login"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "posts",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "authorization",
+                        "value": "{{token}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "localhost:3000/posts?page=3&limit=5&sortBy=id&sortOrder=desc",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["posts"],
+                    "query": [
+                        {
+                            "key": "page",
+                            "value": "3"
+                        },
+                        {
+                            "key": "limit",
+                            "value": "5"
+                        },
+                        {
+                            "key": "sortBy",
+                            "value": "id"
+                        },
+                        {
+                            "key": "sortOrder",
+                            "value": "desc"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "post by id",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "{{token}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "localhost:3000/post/1",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["post", "1"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "update post",
+            "request": {
+                "method": "PATCH",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "{{token}}",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"title\": \"post 1 updated\",\r\n    \"content\": \"post 1 content updated\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "localhost:3000/post/1",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["post", "1"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "delete post",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "{{token}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "localhost:3000/post/2",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["post", "2"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "add post",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "{{token}}",
+                        "type": "text"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\r\n    \"title\": \"new post added\",\r\n    \"content\": \"new post content added 31\"\r\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "localhost:3000/post",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["post"]
+                }
+            },
+            "response": []
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "key": "token",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0M0B0ZXN0LmNvbSIsInVzZXJuYW1lIjoidGVzdDMiLCJpYXQiOjE2OTA2NzcwMTcsImV4cCI6MTY5MDY4MDYxN30.3XfRJGYRdorEFp8A5Gf3OpUKUCul6OBQkhIpsF3R2n4"
+        }
+    ]
+}
